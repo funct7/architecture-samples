@@ -34,7 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
+        <!--WM: How do views know which view model property they should bind to?-->
         <com.example.android.architecture.blueprints.todoapp.ScrollChildSwipeRefreshLayout
             android:id="@+id/refresh_layout"
             android:layout_width="match_parent"
@@ -72,8 +72,8 @@
                         android:id="@+id/tasks_list"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                        app:items="@{viewmodel.items}" />
+                        app:items="@{viewmodel.items}"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -89,8 +89,8 @@
                         android:layout_width="96dp"
                         android:layout_height="96dp"
                         android:layout_gravity="center"
-                        android:src="@{ContextCompat.getDrawable(context, viewmodel.noTaskIconRes)}"
-                        android:contentDescription="@string/no_tasks_image_content_description" />
+                        android:contentDescription="@string/no_tasks_image_content_description"
+                        android:src="@{ContextCompat.getDrawable(context, viewmodel.noTaskIconRes)}" />
 
                     <TextView
                         android:id="@+id/no_tasks_text"
