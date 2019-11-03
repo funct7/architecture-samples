@@ -214,6 +214,8 @@ class TasksViewModel(
         }
     }
 
+    // WM: This method is invoked from the XML.
+    // There are other `loadTasks` invocations from the Fragment code.
     fun refresh() {
         loadTasks(true)
     }

@@ -66,6 +66,7 @@ class TasksFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem) =
         when (item.itemId) {
             R.id.menu_clear -> {
+                // WM: This is more like business logic.
                 viewModel.clearCompletedTasks()
                 true
             }
@@ -144,6 +145,13 @@ class TasksFragment : Fragment() {
         }
     }
 
+    // WM: In order for a person to see how the button tap event is handled,
+    // they have to check the view code.
+    // That is, view events are either handled internally, or they call a method on the VM.
+    // Also, due to Data Binding, there are method calls declared in the XML.
+    // This means for a person to get a picture of how a scene works,
+    // they have to look at the VM for data events and various view components (fragment, view, XML)
+    // for user events.
     private fun navigateToAddNewTask() {
         val action = TasksFragmentDirections
             .actionTasksFragmentToAddEditTaskFragment(
