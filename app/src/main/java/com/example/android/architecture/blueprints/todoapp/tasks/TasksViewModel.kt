@@ -42,6 +42,8 @@ class TasksViewModel(
     private val _items = MutableLiveData<List<Task>>().apply { value = emptyList() }
     val items: LiveData<List<Task>> = _items
 
+    // WM: 현재 네트워크 통신 중인지 V에서 확인을 해야되는 게 아닌 이상 불필요한 상태.
+    // 즉, 통신 중이라는 상태에 대한 복제.
     private val _dataLoading = MutableLiveData<Boolean>()
     val dataLoading: LiveData<Boolean> = _dataLoading
 
